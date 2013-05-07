@@ -1,5 +1,5 @@
 ## SWorD ##
-SWorD (Social Web of real Domotics) is a prototype social network where users, homes, providers, devices and appliances could interact and act in a "smarter" way, by talking each other and lower the technical knowledge to use home automation and domotics systems.
+SWorD (Social Web of real Domotics) is a prototype social network where users, homes, providers, devices and appliances can interact and act in a "smarter" way, by talking each other and thus lowering the technical knowledge to use home automation and domotics systems.
 
 ### LAB2 ###
 1) Creation of static pages for our social network: home, about and contact
@@ -16,3 +16,14 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 - in `app/helpers/application_helper.rb`
 - by editing the title tag in `app/views/layouts/application.html.erb`
+
+### LAB3 - Preparation ###
+1) Fill with some contents all the views
+
+2) Add `bootstrap-sass` gem to include the Bootstrap framework with Sass support [http://twitter.github.io/bootstrap/](http://twitter.github.io/bootstrap/)
+
+- update the `Gemfile`
+- run `bundle install`
+
+3) Add and fill a custom SCSS file in `app/assets/stylesheets`
+

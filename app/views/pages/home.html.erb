@@ -1,5 +1,12 @@
 <% #Provide the page title in a symbol to application.html.erb to avoid duplication %>
 <% provide :title, 'Home' %>
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="center hero-unit">
+  <h1>Welcome to SWorD</h1>
+
+  <h2>
+    Sign up or login to start using <%= link_to "SWorD", '#'%>.
+  </h2>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+</div>
