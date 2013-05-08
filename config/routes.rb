@@ -1,9 +1,14 @@
 SWorD::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/about"
+  root :to => 'pages#home'
 
-  get "pages/contact"
+  match '/about', to: 'pages#about'
+
+  match '/contact', to: 'pages#contact'
+
+  match '/faq', to: 'pages#faq'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
