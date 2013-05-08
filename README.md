@@ -27,3 +27,23 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 3) Add and fill a custom SCSS file in `app/assets/stylesheets`
 
+### LAB3 ###
+1) Move HTML shim, header and footer code in three partials (placed in `app/views/layouts/`)
+
+2) Update the `routes.rb` file, according to the table present in the exercise 1 text
+
+3) Update links present in `_header.html.erb` and `_footer.html.erb`
+
+4) Add a faq page:
+
+- add a new view called `faq.html.erb` with a content similar to the other views
+- update the Pages controller
+- add the corresponding named route to `routes.rb`
+
+5) Add a Users controller and a page named "new"
+
+- `rails generate controller Users new` (or from the RubyMine menu *Tools > Run Rails Generator...*)
+- fill the content of the `new.html.erb` view
+- update/add the corresponding named route to `routes.rb`, mapping it with the signup URI
+- update the "Sign Up" link present in `home.html.erb`
+

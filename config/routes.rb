@@ -1,14 +1,13 @@
 SWorD::Application.routes.draw do
 
+  # route for the homepage
   root :to => 'pages#home'
 
+  # named routes for static pages and signup
   match '/about', to: 'pages#about'
-
   match '/contact', to: 'pages#contact'
-
   match '/faq', to: 'pages#faq'
-
-
+  match '/signup', to: 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
