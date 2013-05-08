@@ -5,43 +5,18 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <!--[if lt IE9]>
-   <script src="http://htmlshim.googlecode.com/svn/trunk/html5.js"></script>
-   <![endif]-->
+  <% # partial for the HTML shim %>
+  <%= render 'layouts/shim'%>
 </head>
 <body>
-
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
-        <%= link_to "SWorD", "#", id: "logo" %>
-        <nav>
-          <ul class="nav pull-right">
-            <% #link_to is the Rails helper to create links (it generates <a...> tags) %>
-            <li><%=link_to "Home",    '#'%></li>
-            <li><%=link_to "Faq",     '#'%></li>
-            <li><%=link_to "Sign in", '#'%></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+  <% # partial for the header %>
+  <%= render 'layouts/header' %>
 
   <div class="container">
     <%= yield %>
 
-    <footer class="footer">
-      <small>
-        <a href="http://github.com/polito-lam/SWorD" alt="SWorD on GitHub">SWorD</a>
-      </small>
-      <nav>
-        <ul>
-          <li><%= link_to "About",   '#' %></li>
-          <li><%= link_to "Contact", '#' %></li>
-          <li><a href="http://bit.ly/lingambmult" alt="Linguaggi e Ambienti Multimediali">News</a></li>
-        </ul>
-      </nav>
-    </footer>
+    <% # partial for the footer %>
+    <%= render 'layouts/footer' %>
   </div>
 
 </body>
