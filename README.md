@@ -122,5 +122,8 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - if it is possible to save such a user into the database, go to the user profile page
 - otherwise, go back to the sign up form
 
+6) Update the sign up form to show error messages (if any)
 
+- add a _error_messages.html.erb partial (in views/shared) to store the code for showing error messages of a generic form
+- update the stylesheet
 
