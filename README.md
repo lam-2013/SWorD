@@ -116,6 +116,11 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 4) Update the stylesheet for a better rendering of the form
 
+5) Add the `create` action needed to the sign up form to the Users controller
+
+- create a new User with the information inserted in the form
+- if it is possible to save such a user into the database, go to the user profile page
+- otherwise, go back to the sign up form
 
 
 
