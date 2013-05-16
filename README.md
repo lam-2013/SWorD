@@ -56,3 +56,15 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 - `bundle exec rake db:migrate` (or from the RubyMine menu *Tools > Run Rake Tasks...*)
 
+3) Add some gems to the Gemfile (and perform a `bundle install`)
+
+- `annotate` (version 2.5.0) to show some annotations in the Rails models
+- `bcrypt-ruby` (already present, but commented) to have some state-of-the-art hash functions available in Rails
+
+4) Annotate the User model to show a little bit more information
+
+- `bundle exec annotate` (or add a new configuration of type *Gem Command* from the RubyMine menu *Run > Edit Configurations...*)
+
+5) Add debug information in `application.html.erb`, by using the `debug` method
+
+
