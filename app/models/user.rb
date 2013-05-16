@@ -10,15 +10,24 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name
+  attr_accessible :email, :name, :password, :password_confirmation
 
-  # name must be always present and with a maximum lenght of 50 chars
+  # basically, the method realizes the authentication system
+  has_secure_password
+
+  # name must be always present and with a maximum length of 50 chars
   validates :name, presence: true, length: { maximum: 50 };
 
   # email allowed format representation (expressed as a regex)
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+.[a-z]+\z/i
 
   # email must be always present, unique and with a specific format
-  validate :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+
+  # password must be always present, and with a minimum length of 6 chars
+  validates :password, presence: true, length: { minimum: 6 }
+
+  # password_confirmation must be always present
+  validates :password_confirmation, presence: true
 
 end

@@ -67,4 +67,18 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 5) Add debug information in `application.html.erb`, by using the `debug` method
 
+6) Add some validations to the User model
+
+- `name` must be always present (`presence: true`) and it must have a maximum length of 50 characters (`length: { maximum: 50 }`)
+- `email` must be always present, unique (`uniqueness: { case_sensitive: false }`) and with a specific defined format (`format: { with: VALID_EMAIL_REGEX }`)
+
+7) Enforce the uniqueness of the email by using a migration
+
+- add an index on the `email` column in the database
+
+8) Give to the User model a `password` field
+
+- generate/migrate a migration to add a column to store the password digest (i.e., an encrypted version of the password)
+- update the User model with two virtual attributes: `password` and `password_confirmation`
+- add the `has_secure_password` method to the User model, to use the authentication system of Rails
 
