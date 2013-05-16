@@ -82,3 +82,21 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - update the User model with two virtual attributes: `password` and `password_confirmation`
 - add the `has_secure_password` method to the User model, to use the authentication system of Rails
 
+### LAB 6 - Preparation ###
+
+1) Add routes for users
+
+- `resources :users` in `config/routes.rb`
+
+2) Add a user in the database, by editing the action `new` in the Users controller
+
+3) Add a new view associated to the Users controller
+
+- create `show.html.erb` in `app/views/users` (filled with some contents)
+- update the page stylesheet
+- add the corresponding action to the User controller (`users_controller.rb`)
+
+4) Add an helper for using a Gravatar as profile pic for the users (in `users_helper.rb`)
+
+- update the view responsible of showing users (`show.html.erb`)
+

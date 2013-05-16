@@ -9,6 +9,9 @@ SWorD::Application.routes.draw do
   match '/faq', to: 'pages#faq'
   match '/signup', to: 'users#new'
 
+  # default routes for the Users controller
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
