@@ -27,7 +27,7 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 3) Add and fill a custom SCSS file in `app/assets/stylesheets`
 
-### LAB3 ###
+### LAB4 ###
 1) Move HTML shim, header and footer code in three partials (placed in `app/views/layouts/`)
 
 2) Update the `routes.rb` file, according to the table present in the exercise 1 text
@@ -46,4 +46,13 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - fill the content of the `new.html.erb` view
 - update/add the corresponding named route to `routes.rb`, mapping it with the signup URI
 - update the "Sign Up" link present in `home.html.erb`
+
+### LAB 5 ###
+1) Generate the User model, with two attributes: name and email
+
+- `rails generate model User name:string email:string` (or from the RubyMine menu *Tools > Run Rails Generator...*)
+
+2) Migrate the model to the database (i.e., create the table and columns corresponding to the User model)
+
+- `bundle exec rake db:migrate` (or from the RubyMine menu *Tools > Run Rake Tasks...*)
 
