@@ -100,3 +100,14 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 - update the view responsible of showing users (`show.html.erb`)
 
+### LAB 6 ###
+
+1) Complete the Gravatar helper
+
+2) Remove the existing user
+
+- in the database: `bundle exec rake db:reset` (or from the RubyMine menu *Tools > Run Rake Tasks...*)
+- in the code: delete the lines in the `new` action of the Users controller
+
+
+
