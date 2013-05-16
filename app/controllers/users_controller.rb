@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     # refine the user variable content with the data passed by the sign up form
     @user = User.new(params[:user])
     if @user.save
-      # Handle a successful save.
+      # handle a successful save
+      flash[:success] = 'Welcome to SWorD!'
       redirect_to @user
     else
       render 'new'
