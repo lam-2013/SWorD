@@ -131,3 +131,28 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 - insert an area to show the flash message in application.html.erb
 - fill the flash if the user signup has been successful (i.e., in the Users controller)
+
+### LAB 7 - Preparation ###
+
+1) Include the SessionHelper to the ApplicationController (helpers are automatically added to views, but not to controllers) and create the corresponding helper
+
+- add `include SessionsHelper` in `app/controllers/application_controller.rb`
+- define a method named `handle_unverified_request` to prevent cross-site request forgery attacks in `application_controller.rb`
+- create `sessions_helper.rb` in `app/helpers`
+
+2) Add a migration to associate a user to its remember token (to be added in the traditional Rails session)
+
+- generate/migrate a migration to add a column and a index for the remember token
+
+3) Update the User model to handle the remember token
+
+- add a callback method to create the remember token (`before_save :create_remember_token`); Rails will look for a `create_remember_token` method and run it before saving the user
+- define such method as private and generate the token by using the `SecureRandom.urlsafe_base64` function to generate a random string, safe for use in URIs, of length 16
+
+4) Define the `sign_in` method in the `SessionsHelper`
+
+5) Define two methods to set and get the current (logged) user for passing this information to all the other pages in the `SessionsHelper`
+
+6) Define a `is_signed_in?` method in the `SessionsHelper`
+
+7) Define a sign out method in the `SessionsHelper`
