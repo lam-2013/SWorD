@@ -156,3 +156,38 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 6) Define a `is_signed_in?` method in the `SessionsHelper`
 
 7) Define a sign out method in the `SessionsHelper`
+
+### LAB 7 - Exercise 1###
+
+1) Generate a Sessions controller
+
+2) Update routes to implement the session as a RESTful resource
+
+- add `match '/signin', to: 'sessions#new'` and `match '/signout, to: 'sessions#destroy', via: :delete`
+- add `resources :sessions, only: [:new, :create, :destroy]`
+
+3) Fill the Sessions controller with the required actions (new, create and destroy)
+
+4) Create the view for the signin form (i.e., `app/views/sessions/new.html.erb`)
+
+- we need to ask for email (the username in our social network) and password
+- since a session is not a Model, define the form as `form_for(:session, url:session_path)`, where the former element is the resource name and the latter is the corresponding URL
+- submit the form will result in `params[:session][:email]` and `params[:session][:password]` to be used in the `create` action
+
+5) Write the `create` action in the Sessions controller
+
+- get the registered user starting from the email given in the sign in form (`params[:session][:email]`)
+- check if the user exist and if the given password is correct (`if user && user.authenticate(params[:session][:password])`)
+- handle a successful login (call the `sign_in` method declared in the `SessionsHelper`)
+- handle a failed login (show an error message and go back to the login form)
+
+6) Update the links in the header
+
+7) Add the Boostrap javascript library to `application.js`
+
+8) Update the sign up method to perform a login if the registration was successful
+
+9) Write the `destroy` action in the Sessions controller for signing out
+
+- call the `sign out` method of SessionsHelper
+- redirect to the homepage

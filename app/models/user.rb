@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   private
 
     def create_remember_token
-      # create a random string, save for use in URIs and cookies, for the user remember token
+      # create a random string, safe for use in URIs and cookies, for the user remember token
       self.remember_token = SecureRandom.urlsafe_base64
     end
 

@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     if @user.save
       # handle a successful save
       flash[:success] = 'Welcome to SWorD!'
+      # automatically sign in
+      sign_in @user
       redirect_to @user
     else
       render 'new'
