@@ -32,6 +32,13 @@ gem 'bootstrap-sass', '2.1'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+# To generate fake data
+gem 'faker', '1.0.1'
+
+# To add pagination capabilities (styled with Bootstrap)
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

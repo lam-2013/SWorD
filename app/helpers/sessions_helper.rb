@@ -35,4 +35,11 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
+  # Check if the given user is also the current user (for authorization purposes)
+  #
+  # user - The User to check the authorization for
+  def current_user?(user)
+    user == current_user
+  end
+
 end

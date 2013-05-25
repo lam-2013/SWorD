@@ -191,3 +191,63 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 - call the `sign out` method of SessionsHelper
 - redirect to the homepage
+
+### LAB 7 - Exercise 2 ###
+
+1) Create the `edit` action and view for the Users
+
+- please note that the `edit` view is almost identical to the `new` view
+
+2) Update the Settings link in the header
+
+3) Define the `update` action in the Users controller
+
+- it is the action called after the edit form submission
+- get the updated user information from the edit form (`params[:user]`)
+- check if the update was successful and handle the success and fail cases
+
+4) Since, right now, everyone can edit user information, implement some controls
+
+- add a filter to the Users controller: before performing the edit and update actions present in the controller, check if the user is signed in (`before_filter :signed_in_user, only: [:edit, :update]`
+- add a filter to the Users controller: before performing the edit and update actions present in the controller, check if the current user is the correct user (`before_filter :correct_user, only: [:edit, :update]`)
+- add the two methods declared in the before filters in the Users controller
+- add another helper method to the SessionsHelper: check if the user for which the editing actions are called is also the current user
+
+5) Add the `index` action and view
+
+- the action must be called only for signed in users: add `index` to the first `before_filter` in the Users controller
+- in the view, cycle upon all the users
+- update the `gravatar_for` helper to show different image sizes
+- add some custom SCSS to `custom.css.scss`
+- update the corresponding link in the header
+
+6) Generate some sample users
+
+- add the `faker` gem to the project
+- perform a `bundle install`
+- write a rake task (in `lib/tasks/sample_data.rake`) for generating 100 users
+- clean the database content (`bundle exec rake db:reset`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
+- execute the newly created task (`bundle exec rake db:populate`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
+
+7) Add pagination to the `index` view and action
+
+- add the `will_paginate` and the `bootstrap-will_paginate` gems
+- perform a `bundle install`
+- edit the `index` view to include the `will_paginate` method (it shows the link to the next and previous pages)
+- edit the `index` action to properly prepare data for the correspective view (by using the `paginate` method in retrieving users)
+
+8) Add the admin user
+
+- generate a new migration to add the admin column in the database (with a boolean value): `add_admin_to_users`
+- update the newly generated migration to set the admin field to false, by default
+- migrate!
+- update the `sample_data.rake` task to assign admin privilegies to the first user
+- clean the database content (`bundle exec rake db:reset`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
+- execute the updated task (`bundle exec rake db:populate`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
+
+9) Let the admin delete other users
+
+- edit the `index` view to add a delete link near each user
+- add the `destroy` action in the Users controller
+- update the `signed_in_user` filter to include the `destroy` action
+- add a before filter named `admin_user` to ensure that only admin can delete users
