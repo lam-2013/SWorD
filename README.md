@@ -264,6 +264,7 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 - by removing `user_id` from the accessible attributes
 - by validating the presence of `user_id`
+- by validating the presence and the length of `content`
 
 3) Link posts with users
 

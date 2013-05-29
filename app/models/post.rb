@@ -10,4 +10,7 @@ class Post < ActiveRecord::Base
 
   # user_id must be present while creating a new post...
   validates :user_id, presence: true
+
+  # content must be present and not longer than 400 chars
+  validates :content, presence: true, length: {maximum: 400}
 end
