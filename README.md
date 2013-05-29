@@ -297,6 +297,13 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 10) Add code for creating a new post
 
 - add a `create` action in the Posts controller to build and save a post
-- update the homepage to show different content wheter a user is logged in
+- update the homepage to show different content whether a user is logged in
 - add a form for the creation of a new post in the homepage (`home.html.erb`) and update the corresponding action in the Pages controller
 - update the `error_messages` partial to handle errors coming from various objects, not only User
+
+11) Add code for deleting an existing post (each user can delete only her own posts)
+
+- add a `destroy` action in the Posts controller to delete a post
+- add a link for deleting a post in the `post` partial (in `app/views/posts`), similar to the one used for deleting a user
+- add a `before_filter` in the Posts controller to check if the user is allowed to delete the desired post (`correct_user`)
+- define the `correct_user` private method in the Post controller
