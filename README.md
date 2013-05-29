@@ -251,3 +251,17 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - add the `destroy` action in the Users controller
 - update the `signed_in_user` filter to include the `destroy` action
 - add a before filter named `admin_user` to ensure that only admin can delete users
+
+### LAB 8 ###
+
+1) Create the Post model, with two attributes: content and user_id
+
+- `rails generate model Post content:string user_id:integer` (or from the RubyMine menu *Tools > Run Rails Generator...*)
+- in the migration, add an index to help retrieve all the posts associated to a given user in reverse order of creation
+- migrate such updates to the database
+
+2) Update the Post model
+
+- by removing `user_id` from the accessible attributes
+- by validating the presence of `user_id`
+
