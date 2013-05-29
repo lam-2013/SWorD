@@ -282,3 +282,21 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 5) Create some fake posts by editing the `sample_data.rake` task
 
 6) Add some custom SCSS
+
+7) Add the `create` and `destroy` route for the Posts resource in `routes.rb`
+
+ - we show posts through the Users controller, so we don't need any other route
+
+8) Create an (empty) Posts controller
+
+9) Only signed in users can create or delete a post
+
+- move the `signed_in_user` method to the `SessionHelper`
+- add a `before_filter` to the Posts controller
+
+10) Add code for creating a new post
+
+- add a `create` action in the Posts controller to build and save a post
+- update the homepage to show different content wheter a user is logged in
+- add a form for the creation of a new post in the homepage (`home.html.erb`) and update the corresponding action in the Pages controller
+- update the `error_messages` partial to handle errors coming from various objects, not only User
