@@ -278,3 +278,7 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - update `show.html.erb` between the Users view
 - add a partial (`app/view/posts/_posts.html.erb`) for showing a single post
 - edit the `show` action in the Users controller to correctly handle the updated view
+
+5) Create some fake posts by editing the `sample_data.rake` task
+
+6) Add some custom SCSS
