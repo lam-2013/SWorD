@@ -17,6 +17,9 @@ class User < ActiveRecord::Base
   # basically, the method realizes the authentication system
   has_secure_password
 
+  # each user can have some posts associated and they must be destroyed together with the user
+  has_many :posts, dependent: :destroy
+
   # put the email in downcase before saving the user
   before_save { |user| user.email = email.downcase }
   # call the create_remember_token private method before saving the user

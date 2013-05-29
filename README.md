@@ -265,3 +265,9 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - by removing `user_id` from the accessible attributes
 - by validating the presence of `user_id`
 
+3) Link posts with users
+
+- add `belongs_to :user` to the Post model
+- add `has_many :posts` to the User model
+- set a descending order (newest to oldest) from post, add `default_scope order: 'posts.created_at DESC` to the Post model
+- if a user is destroyed, all her posts must be also destroyed: update the relationship between users and posts in the User model
