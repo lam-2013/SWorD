@@ -353,3 +353,8 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - create the `_follow.html.erb` partial in the `view/users` folder
 - create the `_unfollow.html.erb` partial in the `view/users` folder
 - render the `_follow_form.html.erb` partial in the user profile
+
+10) Add pages for listing followers and followed users
+
+- add two new actions in the User controller for following and follower (based on previous routes)
+- add a `_show_follow.html.erb` partial in the `view/users` folder
