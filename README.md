@@ -328,3 +328,13 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 - a user has many followed user, through the relationships table
 - define some useful methods (is the current user following a given user? follow and unfollow a user)
+
+5) Update the User model to include Followers properties
+
+- a user has many "reverse" relationships
+- a user has many followers through the previously defined "reverse" relationships table
+
+6) Add some sample following data by updating the `populate` rake task
+
+- reset the database, and populate it again
+
