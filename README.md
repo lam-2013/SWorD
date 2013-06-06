@@ -369,3 +369,11 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - edit the `_follow.html.erb` and `_unfollow.html.erb` partials to support javascript
 - update the Relationship controller to reload the destination page by using ajax
 - create the javascript files corresponding to the two actions in `view/relationships`
+
+13) Implement the status feed (i.e., the wall)
+
+- we want to show, in the home page for a signed in user, her posts and posts from their followed users
+- update the User model by defining a `feed` method to get these posts
+- update the Post model to implement the method called by the User model for the wall
+- add the status feed in the home page view/action
+- update the `create` action in the Post controller to prepare a data structure for properly show the feed items
