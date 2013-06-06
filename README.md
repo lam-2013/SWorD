@@ -338,3 +338,10 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 - reset the database, and populate it again
 
+7) Add routes for following and follower
+
+8) Add some user statistics (e.g., number of followers and followed users)
+
+- create the `_stats.html.erb` in the `shared` folder
+- include the partial in the home page and in the user profile
+- update the stylesheet
