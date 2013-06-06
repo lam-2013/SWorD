@@ -317,3 +317,9 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - remove `follower_id` from the list of accessible attributes of the model
 - migrate the whole
 
+2) Build the User/Relationship association
+
+- a user has many relationships: update the User model
+- a relationship belongs to a follower and a followed user: update the Relationship model
+
+3) Add some validations on the two attributes of the Relationship model
