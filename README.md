@@ -307,3 +307,13 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - add a link for deleting a post in the `post` partial (in `app/views/posts`), similar to the one used for deleting a user
 - add a `before_filter` in the Posts controller to check if the user is allowed to delete the desired post (`correct_user`)
 - define the `correct_user` private method in the Post controller
+
+### LAB 9 ###
+
+1) Generate a Relationship model for followers and followed users
+
+- `rails generate model Relationship follower_id:integer followed_id:integer` (or from the RubyMine menu *Tools > Run Rails Generator...*)
+- add three indexes on `follower_id` and `followed_id` (by acting on the migration)
+- remove `follower_id` from the list of accessible attributes of the model
+- migrate the whole
+
