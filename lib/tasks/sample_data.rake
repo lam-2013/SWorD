@@ -39,8 +39,8 @@ def make_relationships
   user = users.first
   followed_users = users[2..50]
   followers = users[3..40]
-  # first user follows user 2 up to 51
+  # first user follows user 3 up to 51
   followed_users.each { |followed| user.follow!(followed) }
-  # users 2 up to 41 follow back the first user
+  # users 4 up to 41 follow back the first user
   followers.each { |follower| follower.follow!(user) }
 end

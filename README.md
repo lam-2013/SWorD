@@ -363,3 +363,9 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 11) Add the `create` and `destroy` action in the Relationship controller
 
 - create the Relationship controller
+
+12) Add some ajax to the follow/unfollow button
+
+- edit the `_follow.html.erb` and `_unfollow.html.erb` partials to support javascript
+- update the Relationship controller to reload the destination page by using ajax
+- create the javascript files corresponding to the two actions in `view/relationships`
