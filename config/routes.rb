@@ -25,6 +25,9 @@ SWorD::Application.routes.draw do
   # default routes for the Posts controller (only create and destroy - other operations will be done via the Users controlelr)
   resources :posts, only: [:create, :destroy]
 
+  # default routes for the Relationship controller (only create and destroy) - needed to build follow/unfollow relations
+  resources :relationships, only: [:create, :destroy]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
