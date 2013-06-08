@@ -377,3 +377,16 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 - update the Post model to implement the method called by the User model for the wall
 - add the status feed in the home page view/action
 - update the `create` action in the Post controller to prepare a data structure for properly show the feed items
+
+### SEARCH (users) ###
+
+1) Add a route to support simple user search, by editing `routes.rb` (to match `users/search`)
+
+2) Create a partial in the users views for the search form
+
+- render the search form in the header, only for signed in users
+
+3) Implement the `search` action in the Users controller
+
+- add the corresponding search method in the User model (`self.search` since it is a class method)
+- add a `search` view for showing found users (in `/view/users/`)

@@ -75,6 +75,15 @@ class User < ActiveRecord::Base
     Post.from_users_followed_by(self)
   end
 
+  # get the searched user(s) by (part of her) name
+  def self.search(user_name)
+    if user_name
+      where('name LIKE ?', "%#{user_name}%")
+    else
+      scoped # return an empty result set
+    end
+  end
+
   # private methods
   private
 

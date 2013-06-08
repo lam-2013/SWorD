@@ -87,6 +87,11 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  # Paginated search for users
+  def search
+    @users = User.search(params[:search]).paginate(page: params[:page])
+  end
+
   private
 
     # Take the current user information (id) and redirect her to the home page if she is not the 'right' user
