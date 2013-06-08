@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   # check if the user is logged in (e.g., for editing only his information)
-  before_filter :signed_in_user, only: [:edit, :update, :index, :destroy]
+  before_filter :signed_in_user, only: [:edit, :update, :index, :destroy, :messages]
   # check if the current user is the correct user (e.g., for editing only his information)
-  before_filter :correct_user, only: [:edit, :update]
+  before_filter :correct_user, only: [:edit, :update, :messages]
   # check if the current user is also an admin
   before_filter :admin_user, only: :destroy
 
@@ -90,6 +90,13 @@ class UsersController < ApplicationController
   # Paginated search for users
   def search
     @users = User.search(params[:search]).paginate(page: params[:page])
+  end
+
+  # Paginate message index
+  def messages
+    # with the current restrictions, user is always the current_user
+    @user = User.find(params[:id])
+    @messages = @user.received_messages.paginate(page: params[:page])
   end
 
   private

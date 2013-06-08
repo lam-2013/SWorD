@@ -405,3 +405,28 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 3) Migrate the generated migration to create a `messages` table
 
 4) Update the User model to use the newly created messages, by adding `has_private_messages`
+
+5) Update the routes
+
+- add a resource to create and destroy user's messages
+- update the user resource to handle messages
+
+6) Add `create` and `destroy` actions to the Message controller
+
+7) Update the User show view to include a "New message" button (currently it is a link, but it could also be a form like the follow one)
+
+- when clicked, call the `new` action in the Messages controller
+- it will show a modal window to compose a new message
+
+8) Update the User statistics (`stats` partial) to show received messages
+
+- each user can see their own messages, only
+
+9) Add to the User controller a `messages` action to show all the user's message
+
+- create the corresponding view
+
+10) Update the `new` action in the Message controller to compose reply messages
+
+11) Update the `populate` rake task to generate some fake messages
+
