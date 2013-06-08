@@ -392,3 +392,16 @@ SWorD (Social Web of real Domotics) is a prototype social network where users, h
 
 - add the corresponding search method in the User model (`self.search` since it is a class method)
 - add a `search` view for showing found users (in `/view/users/`)
+
+### Private messaging between users ###
+
+1) Add and install the [simple-private-messages](https://github.com/jongilbraith/simple-private-messages) gem to the Gemfile
+
+2) Create the private message model by running the `simple_private_messages:model generator`
+
+- `rails generate simple_private_messages:model User Message` (or from the RubyMine menu *Tools > Run Rails Generator...*)
+- the previous operation generate a Message model and link it to the user model already present in the app (User, in our case)
+
+3) Migrate the generated migration to create a `messages` table
+
+4) Update the User model to use the newly created messages, by adding `has_private_messages`

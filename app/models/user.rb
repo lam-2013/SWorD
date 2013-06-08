@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
   # basically, the method realizes the authentication system
   has_secure_password
 
+  # each user can send/receive some private messages (thanks to the simple-private-messages gem)
+  has_private_messages
+
   # each user can have some posts associated and they must be destroyed together with the user
   has_many :posts, dependent: :destroy
 
