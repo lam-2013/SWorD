@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
     @message = Message.new
 
     # reply to an existing message...
-    unless params[:message].nil?
+    if params[:message]
       # get the message
       subject = Message.find(params[:message]).subject
       # set the reply subject
@@ -60,7 +60,7 @@ class MessagesController < ApplicationController
     # did the user receive a message with the given id?
     @message = current_user.received_messages.find_by_id(params[:id])
     # did the user send a message with the given id?
-    @message = current_user.sent_messages.find_by_id(params[:id]) if @message.nil?
+    @message = current_user.sent_messages.find_by_id(params[:id]) unless @message
     # if not, redirect to the home page
     redirect_to root_url if @message.nil?
   end
