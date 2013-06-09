@@ -9,10 +9,13 @@
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
 #  remember_token  :string(255)
+#  admin           :boolean          default(FALSE)
+#  twitter_uid     :string(255)
+#  facebook_uid    :string(255)
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :twitter_uid, :facebook_uid
 
   # basically, the method realizes the authentication system
   has_secure_password

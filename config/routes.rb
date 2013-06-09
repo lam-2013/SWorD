@@ -12,6 +12,9 @@ SWorD::Application.routes.draw do
   # signout should be performed by using the HTTP DELETE request
   match '/signout', to: 'sessions#destroy', via: :delete
 
+  # service providers callback
+  match '/auth/:provider/callback', to: 'users#new'
+
   # default routes for the Users controller
   resources :users
 
