@@ -40,6 +40,25 @@ class User < ActiveRecord::Base
   # password_confirmation must be always present
   validates :password_confirmation, presence: true
 
+  # create user from oauth data
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      if auth[:provider] == 'twitter'
+        user.twitter_uid = auth[:uid]
+        user.name = auth[:info][:name]
+        # compose a fake email, since twitter does not provide this information
+        user.email = "#{auth[:info][:nickname]}@twitter.com"
+      elsif auth[:provider] == 'facebook'
+        user.facebook_uid = auth[:credentials][:token]
+        user.name = auth[:info][:name]
+        user.email = auth[:info][:email]
+      end
+      # generate a random password
+      user.password = SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+    end
+  end
+
   # private methods
   private
 

@@ -13,7 +13,7 @@ SWorD::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
 
   # service providers callback
-  match '/auth/:provider/callback', to: 'users#new'
+  match '/auth/:provider/callback', to: 'sessions#create'
 
   # default routes for the Users controller
   resources :users
