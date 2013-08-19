@@ -1,5 +1,6 @@
 ## SWorD ##
-SWorD (Social Web of real Domotics) is a prototype social network where users, homes, providers, devices and appliances can interact and act in a "smarter" way, by talking each other and thus lowering the technical knowledge to use home automation and domotics systems.
+SWorD is a prototype social network realized for the "Linguaggi e Ambienti Multimediali" course at Politecnico di Torino (academic year 2012/2013).
+It is mostly based on the [Ruby on Rails Tutorial](http://ruby.railstutorial.org) book by Michael Hartl.
 
 ### LAB2 ###
 1) Creation of static pages for our social network: home, about and contact
